@@ -1,0 +1,16 @@
+.App {
+  /* height: 50vh; */
+  padding:10vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  
+ }
+
+ .ui.positive.button, .ui.positive.buttons .button {
+  background-color: #7fba21;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+}
