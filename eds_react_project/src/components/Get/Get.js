@@ -73,13 +73,11 @@ function Get() {
             <Table.HeaderCell>Address Line Two</Table.HeaderCell>
             <Table.HeaderCell>City</Table.HeaderCell>
             <Table.HeaderCell>Zip Code</Table.HeaderCell>
-            <Table.HeaderCell>Back to admin panel</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
           {
-            
                 <Table.Row>
                   <Table.Cell>{tableData2.prefix}</Table.Cell>
                   <Table.Cell>{tableData2.firstName}</Table.Cell>
@@ -89,23 +87,45 @@ function Get() {
                   <Table.Cell>{tableData2.addressLine2}</Table.Cell>
                   <Table.Cell>{tableData2.city}</Table.Cell>
                   <Table.Cell>{tableData2.zipCode}</Table.Cell>
-                  <Table.Cell>
-                    <Link to="/admin">
-                      <Button color="green"
-                      >Back to admin panel</Button>
-                    </Link>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Link to="/update">
-                      <Button color="green" onClick={() => setLocalStorage(tableData2)}>Update</Button>
-                    </Link>
-                  </Table.Cell>
                 </Table.Row>
-              
-            
           }
         </Table.Body>
         </Table>
+
+        <Table celled>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Vehicle body style</Table.HeaderCell>
+            <Table.HeaderCell>Engine capacity</Table.HeaderCell>
+            <Table.HeaderCell>Additional drivers</Table.HeaderCell>
+            <Table.HeaderCell>Curent value</Table.HeaderCell>
+            <Table.HeaderCell>Commercial purposes?</Table.HeaderCell>
+            <Table.HeaderCell>Outside state?</Table.HeaderCell>
+            <Table.HeaderCell>Date registered</Table.HeaderCell>
+            <Table.HeaderCell>Comments</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+
+        <Table.Body>
+          {
+                <Table.Row>
+                  <Table.Cell>{tableData2.vehicleType}</Table.Cell>
+                  <Table.Cell>{tableData2.engineSize}</Table.Cell>
+                  <Table.Cell>{tableData2.additionalDrivers}</Table.Cell>
+                  <Table.Cell>{tableData2.currentValue}</Table.Cell>
+                  <Table.Cell>{tableData2.commercialPurposes}</Table.Cell>
+                  <Table.Cell>{tableData2.usedOutsideState}</Table.Cell>
+                  <Table.Cell>{tableData2.dateRegistered}</Table.Cell>
+                  <Table.Cell>{tableData2.comments}</Table.Cell>
+                </Table.Row>
+          }
+        </Table.Body>
+        </Table>
+
+        <Link to="/admin">
+           <Button color="green"
+           >Back to admin panel</Button>
+         </Link>
     </div>
 
 

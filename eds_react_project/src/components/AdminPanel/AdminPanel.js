@@ -42,6 +42,8 @@ function AdminPanel() {
 
   return (
     <div>
+      <h3> Welcome to the Admin Panel </h3>
+      <p>Please choose an operation from the dropdown below:</p>
       <Dropdown
         placeholder='Please Select An Operation'
         onChange={e => setSelectedOperation(e.target.innerText)}
@@ -50,7 +52,7 @@ function AdminPanel() {
         options={friendOptions}
       /> 
       {/* <Link to={linkURL}> */}
-        <Button positive type='submit' onClick={navigateToPage}>Positive Button</Button>
+        <Button positive type='submit' onClick={navigateToPage}>Next</Button>
       {/* </Link> */}
     </div>
 

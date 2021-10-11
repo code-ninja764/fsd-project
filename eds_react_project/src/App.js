@@ -7,11 +7,18 @@ import Delete from './components/Delete/Delete';
 import Get from  './components/Get/Get';
 import { BrowserRouter, Route } from 'react-router-dom';
 import AdminPanel from './components/AdminPanel/AdminPanel';
+import logo from './images/AllstateLogo.png';
 
 
 function App() {
   return (
     <BrowserRouter>
+    <div class="ui top fixed menu header">
+        <a class="item" href='/'>
+          <img alt='Allstate Logo' src={logo} />
+        </a>
+        <h1> Allstate Car Insurance Portal </h1> <h5>You're in good hands™</h5>
+        </div>
       <div className="App">
         <div>
           {/* <h3>React CRUD app for car insurance</h3> */}
