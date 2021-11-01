@@ -46,9 +46,10 @@ function Create() {
     }
 
     //lukas - const endpointURL = "https://6151d17e4a5f22001701d459.mockapi.io/ap1/v1/people";
-    const endpointURL = "https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance";
+    //const endpointURL = "https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance";
+    const endpointURL = "http://localhost:8080/applicants";
     axios.post(endpointURL, formData)
-      .then(() => history.push("/read"))
+      .then(() => history.push("/"))
       .catch(err => console.log(err));
   }
 
@@ -78,6 +79,7 @@ function Create() {
   ]
 
   const additionalDriversOptions = [
+    { text: '0', value: '0' },
     { text: '1', value: '1' },
     { text: '2', value: '2' },
     { text: '3', value: '3' },
@@ -178,7 +180,7 @@ function Create() {
             </Grid.Column>
             <Grid.Column>
               <Form.Field fluid>
-                <label>What is the current value of the vehicle?</label>
+                <label>What is the current value of the vehicle? ($)</label>
                 <input type="number" id="currentValue" name="currentValue" onChange={e => setCurrentValue(e.target.value)}
                   min="00" max="50000" />
               </Form.Field>
@@ -186,7 +188,7 @@ function Create() {
               <Form.Field>
                 <label>Date vehicle was first registered</label>
                 <div class="col-8">
-                  <input id="dateRegistered" name="dateRegistered" type="date" required="required" class="form-control" onchange={e => setDateRegistered(e.target.value)} />
+                  <input id="dateRegistered" name="dateRegistered" type="date" required="required" class="form-control" onChange={e => setDateRegistered(e.target.value)} />
                 </div>
               </Form.Field>
             </Grid.Column>

@@ -14,13 +14,15 @@ function Delete() {
   const callMockApiWithAxiosGET = () => {
       //LUKAS API: const endpointURL = "https://6151d17e4a5f22001701d459.mockapi.io/ap1/v1/people";
       // Ed's API Below
-      const endpointURL = "https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance";
+      //const endpointURL = "https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance";
+      const endpointURL = `http://localhost:8080/applicants/id?id=${idForUpdate}`;
       axios.get(endpointURL)
         .then(response => setTableData(response.data));
     };
 
     const onDelete = (id) => {
-      const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${id}`;
+      //const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${id}`;
+      const endpointURL = `http://localhost:8080/applicants?id=${id}`;
       axios.delete(endpointURL)
         .then(() => callMockApiWithAxiosGET())
         .then (() => window.location.reload())
@@ -32,7 +34,9 @@ function Delete() {
     //for retrieving id 
   const callMockAPIToGetRecord= () => {
    
-    const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
+    //const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
+    //const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
+    const endpointURL = `http://localhost:8080/applicants/id?id=${idForUpdate}`;
     axios.get(endpointURL)
       .then(response => setTableData2(response.data));
   };
