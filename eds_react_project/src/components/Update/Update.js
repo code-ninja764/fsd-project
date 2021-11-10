@@ -24,9 +24,13 @@ function Update() {
       id,
       telephoneNumber
     };
+    const telephoneUpdate = {
+      telephoneNumber,
+    };
 
-    const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
-    axios.put(endpointURL, formData)
+    //const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
+    const endpointURL = `http://localhost:8080/applicants/?id=${idForUpdate}&telephoneNumber=${telephoneNumber}`;
+    axios.put(endpointURL, telephoneUpdate)
       .then(() => history.push("/admin"))
       .catch(
         (err) => { console.log(err) }
@@ -36,7 +40,8 @@ function Update() {
 
   const callMockAPIToGetRecord= () => {
    
-    const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
+    //const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
+    const endpointURL = `http://localhost:8080/applicants/id?id=${idForUpdate}`;
     axios.get(endpointURL)
      .then(response => setTableData2(response.data));
   };

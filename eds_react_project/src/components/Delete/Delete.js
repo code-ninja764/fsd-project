@@ -38,7 +38,10 @@ function Delete() {
     //const endpointURL = `https://6151d1824a5f22001701d45d.mockapi.io/api/v1/carInsurance/${idForUpdate}`;
     const endpointURL = `http://localhost:8080/applicants/id?id=${idForUpdate}`;
     axios.get(endpointURL)
-      .then(response => setTableData2(response.data));
+      .then(response => setTableData2(response.data))
+      .catch(
+        (err) => { console.log(err) }
+      );
   };
 
   // function setLocalStorage(data) {
